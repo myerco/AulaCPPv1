@@ -3,6 +3,9 @@ Binaries
 DerivedDataCache
 Intermediate
 Saved
+# External Libs
+ExampleContent
+ExternalAssets
 .vscode
 .vs
 *.VC.db
