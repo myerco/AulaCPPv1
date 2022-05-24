@@ -15,6 +15,7 @@ public:
 	// Sets default values for this actor's properties
 	ACharacterBase();
 
+	/* Configurando propriedade para adicionar uma Static Mesh */
 	UPROPERTY(VisibleAnywhere)
 		UStaticMeshComponent* MeshMain;
 
