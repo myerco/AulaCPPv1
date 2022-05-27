@@ -73,7 +73,9 @@ void ATP_ThirdPersonCharacter::SetupPlayerInputComponent(class UInputComponent* 
 	PlayerInputComponent->BindTouch(IE_Released, this, &ATP_ThirdPersonCharacter::TouchStopped);
 
 	// VR headset functionality
-	PlayerInputComponent->BindAction("ResetVR", IE_Pressed, this, &ATP_ThirdPersonCharacter::OnResetVR);
+	//PlayerInputComponent->BindAction("ResetVR", IE_Pressed, this, &ATP_ThirdPersonCharacter::OnResetVR);
+
+	PlayerInputComponent->BindAction("ShowMensagem", IE_Pressed, this, &ATP_ThirdPersonCharacter::ShowMensagem);
 }
 
 
@@ -137,4 +139,9 @@ void ATP_ThirdPersonCharacter::MoveRight(float Value)
 		// add movement in that direction
 		AddMovementInput(Direction, Value);
 	}
+}
+
+
+void ATP_ThirdPersonCharacter::ShowMensagem(FKey key) {
+	UE_LOG(LogTemp, Warning, TEXT("Teste 123..."));
 }
