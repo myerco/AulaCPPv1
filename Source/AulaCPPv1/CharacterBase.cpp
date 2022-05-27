@@ -20,7 +20,11 @@ ACharacterBase::ACharacterBase()
 	* ConstructorHelpers - No construtor, inicializamos os componentes e, em seguida, definimos seus valores usando FObjectFinder. 
 	Também configuramos a classe para gerar usando a função StaticClass para recuperar uma instância UStatic* de um tipo de classe.
 	*/
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> SphereVisualAsset(TEXT("/Game/ExampleContent/StarterContent/Shapes/Shape_Sphere.Shape_Sphere"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> SphereVisualAsset(TEXT("/Game/AulaCPP/Art/Shapes/Shapes/Shape_Sphere.Shape_Sphere"));
+
+	// / Game / ExampleContent / StarterContent / Shapes / Shape_Sphere.Shape_Sphere
+
+	///F:/UnrealProjects/AulaCpp/Content/AulaCPP/Art/Shapes/Shapes/Shape_Sphere.uasset
 
 	if (SphereVisualAsset.Succeeded()) {
 		MeshMain->SetStaticMesh(SphereVisualAsset.Object);
