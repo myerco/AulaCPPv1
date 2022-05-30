@@ -8,6 +8,7 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/Controller.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "../CharacterBase/ReactToTriggerInteface.h"
 
 //////////////////////////////////////////////////////////////////////////
 // ATP_ThirdPersonCharacter
@@ -144,4 +145,16 @@ void ATP_ThirdPersonCharacter::MoveRight(float Value)
 
 void ATP_ThirdPersonCharacter::ShowMensagem(FKey key) {
 	UE_LOG(LogTemp, Warning, TEXT("Teste 123..."));
+}
+
+void ATP_ThirdPersonCharacter::BeginPlay() {
+
+	Super::BeginPlay();
+
+	UE_LOG(LogTemp, Warning, TEXT("Begin play"));
+
+	if (GetClass()->ImplementsInterface(UReactToTriggerInteface::StaticClass()))
+	{
+		UE_LOG(LogTemp, Warning, TEXT("implementa interface"));
+	}
 }

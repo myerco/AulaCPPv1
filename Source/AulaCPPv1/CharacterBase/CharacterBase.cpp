@@ -15,6 +15,7 @@ ACharacterBase::ACharacterBase()
 	Você terá que carregar o malha mais tarde.
 		*/
 	MeshMain = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh Main"));
+	MeshMain->SetupAttachment(RootComponent);
 
 	/*
 	* ConstructorHelpers - No construtor, inicializamos os componentes e, em seguida, definimos seus valores usando FObjectFinder. 
@@ -45,7 +46,12 @@ void ACharacterBase::BeginPlay()
 	Super::BeginPlay();
 
 	UE_LOG(LogTemp, Warning, TEXT("Teste 123..."));
-	
+
+	if (GetClass()->ImplementsInterface(UReactToTriggerInteface::StaticClass()))
+	{
+		UE_LOG(LogTemp, Warning, TEXT("implementa interface"));
+	}
+	UE_LOG(LogTemp, Warning, TEXT("não deu"));
 }
 
 // Called every frame
@@ -54,4 +60,13 @@ void ACharacterBase::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 }
+
+void ACharacterBase::GetNameInterface()
+{
+	
+		UE_LOG(LogTemp, Warning, TEXT("Interação..."));
+
+
+}
+
 
